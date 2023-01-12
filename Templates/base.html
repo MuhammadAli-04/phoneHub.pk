@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script
+      src="https://kit.fontawesome.com/1d8ba9f270.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href= {% static "home/index.css" %} />
+
+    <title>PhoneHub.pk | Get the Phone you need</title>
+  </head>
+
+  <body>
+    <div class="navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img
+              src="{% static 'logo.png' %}"
+              alt="PhoneHub"
+              width="160"
+              height="44"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <xan class="navbar-toggler-icon"></xan>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={%url 'blogs' %}>Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href={% url 'compare' %}>Compare</a>
+              </li>
+            </ul>
+            <div class="wrapper">
+              <div class="search-input">
+                <a href="" target="_blank" hidden></a>
+                <input type="text" value="" id="search" placeholder="Type to search..">
+                <div class="autocom-box">
+                  <!-- here list are inserted from javascript -->
+                </div>
+                <a href="#" onclick="searchPhone()" class="icon" id="searchBtn"><i class="fas fa-search"></i></a>
+              </div>
+            </div>
+            <div class="dropstart">
+                <a href="#" class="d-block link-light text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-circle-user fa-lg"></i>
+                </a>
+                {% if userr %}
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="#">{{userr.name}}</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href={% url 'signOut' %}>Logout</a></li>
+                    </ul>
+                {% else %}
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href={% url 'signUp' %}>Login/SignUp</a></li>
+                    </ul>
+                {% endif %}   
+            </div>
+            
+            <a style="color: white;" class="cart" href={% url 'cart' %} >
+                <i class="fa-solid fa-cart-shopping fa-lg"></i>
+            </a>
+            
+            <div class="dropstart">
+              <a href="#" class="d-block link-light text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-arrows-rotate"></i>
+              </a>
+                  <ul class="dropdown-menu text-small">
+                      <li><a class="dropdown-item" href= '#'  onclick="window.location.href = '/admin/'">Admin</a></li>
+                  </ul>
+          </div>
+          
+            
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <div class="col-1-of-5">
+      <div class="all-brands">
+        <h2 class="labels">
+            <i class="fa-solid fa-mobile-screen"></i>Phone Finder
+        </h2>
+        <div class="col-1-of-4">
+            <div class="brands">
+                <a href={% url 'brandPhones' 'Apple' %}><p class="brand-name">Apple</p></a>
+                <a href={% url 'brandPhones' 'Google' %}><p class="brand-name">Google</p></a>
+                <a href={% url 'brandPhones' 'Honor' %}><p class="brand-name">Honor</p></a>
+                <a href={% url 'brandPhones' 'HTC' %}><p class="brand-name">HTC</p></a>
+            </div>
+        </div>
+        <div class="col-1-of-4">
+            <div class="brands">
+                <a href={% url 'brandPhones' 'Huawei' %}><p class="brand-name">Huawei</p></a>
+                <a href={% url 'brandPhones' 'Infinix' %}><p class="brand-name">Infinix</p></a>
+                <a href={% url 'brandPhones' 'LG' %}><p class="brand-name">LG</p></a>
+                <a href={% url 'brandPhones' 'Motorola' %}><p class="brand-name">Motorola</p></a>
+            </div>
+        </div>
+        <div class="col-1-of-4">
+            <div class="brands">
+                <a href={% url 'brandPhones' 'Nothing' %}><p class="brand-name">Nothing</p></a>
+                <a href={% url 'brandPhones' 'Nokia' %}><p class="brand-name">Nokia</p></a>
+                <a href={% url 'brandPhones' 'Oppo' %}><p class="brand-name">Oppo</p></a>
+                <a href={% url 'brandPhones' 'OnePlus' %}><p class="brand-name">OnePlus</p></a>
+            </div>
+        </div>
+        <div class="col-1-of-4">
+            <div class="brands">
+                <a href={% url 'brandPhones' 'Realme' %}><p class="brand-name">Realme</p></a>
+                <a href={% url 'brandPhones' 'Samsung' %}><p class="brand-name">Samsung</p></a>
+                <a href={% url 'brandPhones' 'Sony' %}><p class="brand-name">Sony</p></a>
+                <a href={% url 'brandPhones' 'Xiaomi' %}><p class="brand-name">Xiaomi</p></a>
+            </div>
+        </div>
+        <div class="col-1-of-2 dropdown">
+            <h2 class="labels">
+              <a class="text-decoration-none" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>All Brands
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Apple' %}>Apple</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Google' %}>Google</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Honor' %}>Honor</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'HTC' %}>HTC</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Huawei' %}>Huawei</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Infinix' %}>Infinix</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'LG' %}>LG</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Motorola' %}>Motorola</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Nothing' %}>Nothing</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Nokia' %}>Nokia</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Oppo' %}>Oppo</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'OnePlus' %}>OnePlus</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Realme' %}>Realme</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Samsung' %}>Samsung</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Sony' %}>Sony</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Xiaomi' %}>Xiaomi</a></li>
+                <li><a class="dropdown-item" href={% url 'brandPhones' 'Tecno' %}>Tecno</a></li>
+              </ul>
+            </h2>
+        </div>
+        <div class="col-1-of-2">
+            <h2 class="labels">
+              <a class="text-decoration-none" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>Rumor Mill
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href='#'>Google Pixel Fold</a></li>
+                <li><a class="dropdown-item" href='#'>Samsung S50</a></li>
+                <li><a class="dropdown-item" href='#'>iPhone 15 Ultra Pro Max</a></li>
+              </ul>
+            </h2>
+        </div>
+  </div>
+
+      <div class="top-searches">
+        <h2 class="daily-interest">Top 10 by Daily Interest</h2>
+        <a href= {% url 'specs' 'Apple' 'Iphone 14 pro Max' %} ><p class="search-name">Iphone 14 pro Max</p></a>
+        <a href= {% url 'specs' 'Google' 'Google Pixel 6pro' %} ><p class="search-name1">Google Pixel 6pro</p></a>
+        <a href= '#' ><p class="search-name">Sony Xperia I Pro-iv</p></a>
+        <a href= '#' ><p class="search-name1">Samsung S22 Ultra 5G</p></a>
+        <a href= '#' ><p class="search-name">Xiaomi 12T Pro</p></a>
+        <a href= '#' ><p class="search-name1">OnePlus 10 pro</p></a>
+        <a href= '#' ><p class="search-name">Google Pixel 7</p></a>
+        <a href= '#' ><p class="search-name1">iPhone 14 pro</p></a>
+        <a href= '#' ><p class="search-name">Realme 10</p></a>
+        <a href= '#' ><p class="search-name1">Nothing Phone 1</p></a>
+      </div>
+    </div>
+
+    {% block body %} {% endblock body %}
+
+    <div class="col-1-of-5">
+      <h2 class="ads">Advertisments</h2>
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src= {% static 'redmi-note12.jpg' %} class="d-block w-100"
+            alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src={% static 'Samsung-A04e.jpg' %} class="d-block w-100"
+            alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src={% static 'zero20a.jpg' %} class="d-block w-100" alt="..."
+            />
+          </div>
+        </div>
+      </div>
+
+
+      <div
+        id="carouselExampleFade"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src={% static 'Samsung-A04e.jpg' %} class="d-block w-100"
+            alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src={% static 'zero20a.jpg' %} class="d-block w-100" alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img src= {% static 'redmi-note12.jpg' %} class="d-block w-100"
+            alt="..." />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-1-of-5">
+      
+    </div>
+
+
+    
+    <script src="{% static 'home/home.js' %}" charset="utf-8"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

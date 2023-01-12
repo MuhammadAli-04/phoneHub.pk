@@ -1,0 +1,96 @@
+{% extends 'base.html' %} {% load static %} {% block body %} <link
+rel="stylesheet" href={% static 'blogs/blogs.css' %}>
+
+<div class="col-3-of-5">
+  <h2 style="width: 100%;text-align: center;margin-top:10px">PUBLISH YOUR BLOG</h2>
+  <div class="col-1-of-1">
+    {% if userr %}
+    <form id='form1' action={% url 'addBlog' %} method="post">
+      {% csrf_token %}
+      <div class="col-1-of-2">
+        <label for="exampleFormControlInput1" name='issue' id = 'issue' class="form-label">Issue</label>
+        <input type="text" required name="issue" class="form-control name" id="exampleFormControlInput1" placeholder="Issue ...">
+      </div>
+      <div class="col-1-of-2">
+        <label for="exampleFormControlInput1" name='phone' id = 'phone' class="form-label">Device Name</label>
+        <input type="text" required name="phone" class="form-control name" id="exampleFormControlInput1" placeholder="Device Name ...">
+      </div>
+      <label for="exampleFormControlTextarea1" class="form-label ms-2">Content</label>
+      <textarea required class="form-control" name='content' id="exampleFormControlTextarea1" rows="5" placeholder="Write your Query or share your experience with us ..." style="width: 96%;margin: auto;"></textarea>
+
+      <button class="ms-3 btn btn-secondary" type="submit" style="margin-top: 10px;">Publish</button>
+    </form>
+    {% else %}
+    <form action={% url 'signIn' %}>
+      <button class="btn btn-secondary" type="submit">SignIn/LogIn</button>
+    </form>
+    {% endif %}
+  </div>
+
+  <br>
+  <h2 style="width: 100%;text-align: center;">BLOGS</h2>
+
+  {% for blog in blogs %}
+    <div class="main-section">
+    <div class="topic">
+      Issue :
+      <strong style="font-size: 24px">{{blog.issue}}</strong>
+    </div>
+    <div class="content">
+      {{blog.content}}
+      <br />
+    </div>
+    <div class="about">
+      <div class="col-1-of-2">
+        <div class="device-name">
+          Device : <strong>{{blog.phone}}</strong>
+        </div>
+      </div>
+      <div class="col-1-of-2">
+        <div class="author">By : <strong>{{blog.by}}</strong></div>
+      </div>
+    </div>
+    <br>
+    <div class="comments">
+      <div class="topic">
+        <h2>Comments</h2>
+      </div>
+
+      {% for comment in blog.comments %}
+        {% if comment != "Empty" %}
+          <div class="comment">
+          {{comment.0}}
+          <br />
+          by: <strong>{{comment.1}}</strong>
+        </div>
+        {% endif %}
+      {% endfor %}
+      
+      {% if userr %}
+      <form method="post" action={% url 'addComment' blog.id  %}>
+        {% csrf_token %}
+        <div class="col-4-of-5" style="margin: auto;">
+          <div class="col-3-of-5">
+            <textarea required class="form-control" name='comment' id="exampleFormControlTextarea1" rows="1" placeholder="Add a comment" style="margin: auto;"></textarea>
+          </div>
+          <div class="col-1-of-5">
+            <button type="submit">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+      {% else %}
+      <a href={% url 'signIn' %}>SignIn to comment :)</a>
+      {% endif %}
+    </div>
+    <br>
+  </div>
+
+  <br /><br /><br />
+  {% endfor %}
+
+  
+</div>
+
+{% endblock body %}

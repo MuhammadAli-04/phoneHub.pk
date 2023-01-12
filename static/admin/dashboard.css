@@ -1,0 +1,432 @@
+@keyframes display {
+    0% {
+      opacity: 0%;
+      transition: all 0.1s;
+    }
+  
+    50% {
+      opacity: 50%;
+      transition: all 0.1s;
+    }
+  
+    100% {
+      opacity: 100%;
+      transition: all 0.1s;
+    }
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .ads {
+    font-size: large;
+    padding: 3.5%;
+    text-align: center;
+    background-color: #c1c1c1;
+  }
+  
+  body {
+    color: black;
+    background-color: white;
+  }
+  
+  .brands {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #ebeff3;
+    border-left: black;
+  }
+  
+  .brand-name {
+    font-size: small;
+    text-align: center;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    color: black;
+    text-decoration: none;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .brand-name:hover {
+    color: white;
+    background-color: #222222;
+  }
+  
+  .col-1-of-1 {
+    width: 100%;
+    float: left;
+  }
+  
+  .col-1-of-2 {
+    width: calc(100% / 2);
+    float: left;
+  }
+  
+  .col-1-of-4 {
+    width: calc(100% / 4);
+    float: left;
+  }
+  
+  .col-1-of-5 {
+    width: calc(100% / 5);
+    float: left;
+  }
+  
+  .col-3-of-5 {
+    width: calc((100% / 5) * 3);
+    float: left;
+    padding: 0% 1%;
+  }
+  
+  .col-4-of-5 {
+    width: calc((100% / 5) * 4);
+    float: left;
+  }
+  
+  .daily-interest {
+    padding: 4%;
+    font-size: large;
+    text-align: center;
+    background-color: #c1c1c1;
+  }
+  
+  .fa-magnifying-glass:hover {
+    color: #222222;
+  }
+  
+  .fa-solid {
+    margin: 5px;
+  }
+  
+  .fa-solid:hover {
+    transform: scale(1.2);
+    transition: all 0.2s;
+  }
+  
+  .fa-user-plus {
+    color: white;
+  }
+  
+  .fa-user-plus:hover {
+    transform: scale(1.2) translateY(5px);
+  }
+  
+  .menu .fa-bars {
+    color: white;
+  }
+  
+  .menu .fa-cart-shopping {
+    color: white;
+  }
+  
+  .labels {
+    padding: 6% 3% 6% 3%;
+    margin: 0;
+    font-size: medium;
+    text-align: center;
+    color: black;
+    background-color: #c1c1c1;
+  }
+  
+  .labels:hover {
+    color: white;
+    background-color: #222222;
+  }
+  
+  .phone-name {
+    background-color: #ebeff3;
+    padding: 1%;
+  }
+  
+  .search-name1 {
+    background-color: #ebeff3;
+    text-decoration: none;
+  }
+  
+  .signin-button {
+    position: relative;
+  }
+  
+  .specs-box {
+    margin-top: 18%;
+    text-align: center;
+  }
+  
+  .top-searches {
+    margin-top: 2%;
+  }
+  
+  [class^="search-name"] {
+    margin: 0;
+    padding: 2% 0 2% 3%;
+  }
+  
+  .navigation-menu .navigation__checkbox {
+    display: none;
+  }
+  
+  .navigation-menu .navigation__button {
+    background-color: white;
+    height: 7rem;
+    width: 7rem;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 56.25em) {
+    .navigation-menu .navigation__button {
+      top: 4rem;
+      right: 4rem;
+    }
+  }
+  
+  @media only screen and (max-width: 37.5em) {
+    .navigation-menu .navigation__button {
+      top: 3rem;
+      right: 3rem;
+    }
+  }
+  
+  .navigation-menu .navigation__background {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background-image: radial-gradient(#c1c1c1, #ebeff3);
+    z-index: 1000;
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  
+  @media only screen and (max-width: 56.25em) {
+    .navigation-menu .navigation__background {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+  }
+  
+  @media only screen and (max-width: 37.5em) {
+    .navigation-menu .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
+  }
+  
+  .navigation-menu .navigation__nav {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    opacity: 0;
+    width: 0;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .navigation-menu .navigation__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .navigation-menu .navigation__item {
+    margin: 1rem;
+  }
+  
+  .navigation-menu .navigation__link:link,
+  .navigation-menu .navigation__link:visited {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 300;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+    background-size: 220%;
+    transition: all 0.4s;
+  }
+  
+  .navigation-menu .navigation__link:link span,
+  .navigation-menu .navigation__link:visited span {
+    margin-right: 1.5rem;
+    display: inline-block;
+  }
+  
+  .navigation-menu .navigation__link:hover,
+  .navigation-menu .navigation__link:active {
+    background-position: 100%;
+    color: white;
+    transform: translateX(1rem);
+  }
+  
+  .navigation-menu .navigation__checkbox:checked~.navigation-menu .navigation__background {
+    transform: scale(80);
+  }
+  
+  .navigation-menu .navigation__checkbox:checked~.navigation-menu .navigation__nav {
+    opacity: 1;
+    width: 100%;
+  }
+  
+  .navigation-menu .navigation__icon {
+    position: relative;
+    margin-top: 3.5rem;
+  }
+  
+  .navigation-menu .navigation__icon,
+  .navigation-menu .navigation__icon::before,
+  .navigation-menu .navigation__icon::after {
+    width: 3rem;
+    height: 2px;
+    background-color: #222222;
+    display: inline-block;
+  }
+  
+  .navigation-menu .navigation__icon::before,
+  .navigation-menu .navigation__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: all 0.2s;
+  }
+  
+  .navigation-menu .navigation__icon::before {
+    top: -0.8rem;
+  }
+  
+  .navigation-menu .navigation__icon::after {
+    top: 0.8rem;
+  }
+  
+  .navigation-menu .navigation__button:hover .navigation-menu .navigation__icon::before {
+    top: -1rem;
+  }
+  
+  .navigation-menu .navigation__button:hover .navigation-menu .navigation__icon::after {
+    top: 1rem;
+  }
+  
+  .navigation-menu .navigation__checkbox:checked+.navigation-menu .navigation__button .navigation-menu .navigation__icon {
+    background-color: transparent;
+  }
+  
+  .navigation-menu .navigation__checkbox:checked+.navigation-menu .navigation__button .navigation-menu .navigation__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  
+  .navigation-menu .navigation__checkbox:checked+.navigation-menu .navigation__button .navigation-menu .navigation__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+  
+  .navigation-menu .all-brands {
+    height: auto;
+    overflow: hidden;
+  }
+  
+  /* ///////////////////////////////////////// */
+  
+  
+  /* Suggestions */
+  ::selection {
+    color: #fff;
+    background: #000;
+  }
+  
+  .wrapper {
+    max-width: 450px;
+    margin: 0 2%;
+    /* position: absolute; */
+  }
+  
+  .wrapper .search-input {
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+  }
+  
+  .search-input input {
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 60px 0 20px;
+    font-size: 18px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-input.active input {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .search-input .autocom-box {
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  
+  .search-input.active .autocom-box {
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+  
+    /* Arham ki chwlain  */
+    position: absolute;
+    max-width: 450px;
+    width: 283px;
+    z-index: 3;
+    background: white;
+  }
+  
+  .autocom-box li {
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+  }
+  
+  .search-input.active .autocom-box li {
+    display: block;
+  }
+  
+  .autocom-box li:hover {
+    background: #f2f2f2;
+  }
+  
+  .search-input .icon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
+  }

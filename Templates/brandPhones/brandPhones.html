@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% load static %} {% block body %}
+<link rel="stylesheet" href={%static 'brandPhone/brandPhone.css' %}>
+<div class="col-3-of-5">
+  <div class="phones">
+    <h4 class="heading">{{brand}}</h4>
+   
+    <div class = "allRows">
+   
+    </div>
+  </div>
+</div>
+
+<script src="{% static 'brandPhone/brandPhone.js' %}"></script>
+
+{% endblock body %}

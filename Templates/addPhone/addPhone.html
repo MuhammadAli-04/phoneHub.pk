@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://kit.fontawesome.com/1d8ba9f270.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+                crossorigin="anonymous" />
+
+        <title>Add Phone</title>
+        <link rel="stylesheet" href={% static "admin/dashboard.css" %} />
+        <link rel="stylesheet" href={% static 'addPhone/addPhone.css' %}>
+</head>
+
+<body>
+        <div class="navigation">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="{% url 'dashboard' %}">
+                            <img src="{% static 'logo.png' %}" alt="PhoneHub" width="160" height="44" />
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <xan class="navbar-toggler-icon"></xan>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="{% url 'dashboard' %}">All
+                                        Brands</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'addPhoneInfo' %}">Add New
+                                        Phone</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'newAdmin' %}">Add Management</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'orders' %}">Orders</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'dispatchOrder' 'null' %}">Dispatched</a>
+                                </li>
+                            </ul>
+                            <div class="dropstart">
+                                <a href="#" class="d-block link-light text-decoration-none" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fa-solid fa-circle-user fa-lg"></i>
+                                </a>
+                                {% if userr %}
+                                <ul class="dropdown-menu text-small">
+                                    <li><a class="dropdown-item" href="#">{{userr.name}}</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{% url 'adminHome' %}">Logout</a></li>
+                                </ul>
+                                {% else %}
+                                <ul class="dropdown-menu text-small">
+                                    <li><a class="dropdown-item" href='#'>Login/SignUp</a></li>
+                                </ul>
+                                {% endif %}
+                            </div>
+                            <div class="dropstart">
+                                <a href="#" class="d-block link-light text-decoration-none" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </a>
+                                <ul class="dropdown-menu text-small">
+                                    <li><a class="dropdown-item" href='#' onclick="window.location.href = '/'">User</a></li>
+                                </ul>
+                            </div>
+        
+        
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+
+        <form id='form1' action={% url 'addPhoneInfo' %} method="post">
+                {% csrf_token %}
+                <br>
+                <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Brand Name</label>
+                        <input type="text" required name="Brand" class="form-control col-1-of-1"
+                                id="exampleFormControlInput1" placeholder="Brand">
+                </div>
+                <div class="mb-3 col-1-of-2">
+                        <label for="exampleFormControlInput1" id='Name' class="form-label">Name</label>
+                        <input type="text" required name="Name" class="form-control name" id="exampleFormControlInput1"
+                                placeholder="Phone Name">
+                </div>
+
+
+                <div class="mb-3 col-1-of-2">
+                        <label for="exampleFormControlInput1" class="form-label">Network</label>
+                        <input type="text" required name="Technology" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Technology">
+                </div>
+
+                <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label col-1-of-1">Launch</label>
+                        <input type="text" required name="Announced" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Announced">
+                        <input type="text" required name="Status" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Status">
+                </div>
+
+                <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Build</label>
+                        <input type="text" required name="Dimensions" class="form-control col-1-of-1"
+                                id="exampleFormControlInput1" placeholder="Dimensions">
+                        <input type="text" required name="Weight" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Weight">
+                        <input type="text" required name="Sims" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Sims">
+                </div>
+
+                <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Display</label>
+                        <input type="text" required name="Type" class="form-control col-1-of-1"
+                                id="exampleFormControlInput1" placeholder="Type">
+                        <input type="text" required name="Size" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Size">
+                        <input type="text" required name="Resolution" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Resolution">
+                </div>
+
+                <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Platform</label>
+                        <input type="text" required name="OS" class="form-control col-1-of-1"
+                                id="exampleFormControlInput1" placeholder="Operating System">
+                        <input type="text" required name="Chipset" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Chipset">
+                        <input type="text" required name="CPU" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="CPU">
+                </div>
+
+                <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label col-1-of-1">Camera</label>
+                        <input type="text" required name="Front" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Front">
+                        <input type="text" required name="Rear" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Rear">
+                </div>
+
+                <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label col-1-of-1">Memory</label>
+                        <input type="text" required name="Ram" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Ram">
+                        <input type="text" required name="Rom" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Rom">
+                </div>
+
+                <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label col-1-of-1">Battery</label>
+                        <input type="text" required name="Capacity" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Capacity">
+                        <input type="text" required name="Charging" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Charging">
+                </div>
+
+                <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label col-1-of-1">Sensors</label>
+                        <input type="text" required name="Authentications" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Authentication">
+                        <input type="text" required name="Extras" class="form-control col-1-of-2"
+                                id="exampleFormControlInput1" placeholder="Extras">
+                </div>
+
+                <div class="mb-3 col-1-of-2">
+                        <label for="exampleFormControlInput1" class="form-label">Colors</label>
+                        <input type="text" required name="Available" class="form-control" id="exampleFormControlInput1"
+                                placeholder="Available">
+                </div>
+
+                <div class="mb-3 col-1-of-2">
+                        <label for="exampleFormControlInput1" class="form-label">Price</label>
+                        <input type="text" required name="USD" class="form-control" id="exampleFormControlInput1"
+                                placeholder="USD">
+                </div>
+
+                <div class="mb-3">
+                        <label for="formFile" class="form-label">Upload Image</label>
+                        <input class="form-control col-1-of-1" type="file" required name="myImage"
+                                accept="image/jpg, image/png, image/jpeg" id="formFile">
+                </div>
+                <br><br>
+                <a href="javascript:submitForm()" class="btn btn-dark">Add Phone</a>
+                <button class="btn btn-dark" type="reset">Reset Form</button>
+                <!-- <button onsubmit="submitFrom()" class="btn btn-dark" >Add Phone</button> -->
+        </form>
+
+
+        <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase.js"></script>
+        <script src={% static "addPhone/addPhone.js" %} charset="UTF-8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>

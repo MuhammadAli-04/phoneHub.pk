@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+
+    {% if mobile.show == 1 %}
+    <script>window.alert("Phone Addedd Successfully!!!")</script>
+    {% elif mobile.show == 2 %}
+    <script>window.alert("Phone Already Addedd!!!")</script>
+    {% endif %}
+    <link rel="stylesheet" href={% static 'specs/specs.css' %}>
+    
+
+    <div class="col-3-of-5">
+        <div class="specs">
+            <h2 class="phone-name">{{mobile.Name}}</h2>
+            <div class="col-1-of-5">
+                <img style = "width: 160px;height: 212px;" src= "{{mobile.ImageURL.0}}" alt="{{mobile.Name}}" />
+            </div>
+            <div class="col-4-of-5">
+                <div class="specs-box col-1-of-4">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    <h2 class="display-size">{{crousal.display}}"</h2>
+                    <p class="display-resolution">{{crousal.dimensions}} pixels</p>
+                </div>
+                <div class="specs-box col-1-of-4">
+                    <i class="fa-solid fa-camera"></i>
+                    <h2 class="camera">{{crousal.rearcamera}}</h2>
+                    <p class="cam-resolution">{{crousal.frontcamera}}</p>
+                </div>
+                <div class="specs-box col-1-of-4">
+                    <i class="fa-solid fa-microchip"></i>
+                    <h2 class="ram">{{crousal.ram}}</h2>
+                    <p class="processor">{{crousal.chipset}}</p>
+                </div>
+                <div class="specs-box col-1-of-4">
+                    <i class="fa-solid fa-battery-full"></i>
+                    <h2 class="battery-capacity">{{crousal.battery}}</h2>
+                    <p class="battery-type">{{crousal.type}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="launch">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Launch</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>Announced</div>
+                    <div>Status</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Launch.Announced}}</div>
+                <div>{{mobile.Launch.Status}}</div>
+            </div>
+        </div>
+        <div class="network">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Network</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>Technology</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Network.Technology}}</div>
+            </div>
+        </div>
+
+        <div class="build">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Build</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>Dimensions</div>
+                    <div>Weight</div>
+                    <div>Sims</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Build.Dimensions}}</div>
+                <div>{{mobile.Build.Weight}}</div>
+                <div>{{mobile.Build.Sims}}</div>
+            </div>
+        </div>
+
+        <div class="display">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Display</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>Type</div>
+                    <div>Size</div>
+                    <div>Resolution</div>
+                </div> 
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Display.Type}}</div>
+                <div>{{mobile.Display.Size}}</div>
+                <div>{{mobile.Display.Resolution}}</div>
+            </div>
+        </div>
+
+        <div class="platform">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Platform</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>OS</div>
+                    <div>Chipset</div>
+                    <div>CPU</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Platform.OS}}</div>
+                <div>{{mobile.Platform.Chipset}}</div>
+                <div>{{mobile.Platform.CPU}}</div>
+            </div>
+        </div>
+
+        <div class="memory">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Memory</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>Ram</div>
+                    <div>Rom</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Memory.Ram}}</div>
+                <div>{{mobile.Memory.Rom}}</div>
+            </div>
+        </div>
+
+        <div class="cameras">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Camera</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>Front</div>
+                    <div>Rear</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Camera.Front}}</div>
+                <div>{{mobile.Camera.Rear}}</div>
+            </div>
+        </div>
+
+        <div class="battery">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Battery</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>Capacity</div>
+                    <div>Charging</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Battery.Capacity}}</div>
+                <div>{{mobile.Battery.Charging}}</div>
+            </div>
+        </div>
+
+        <div class="sensors">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Sensors</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>Authentication</div>
+                    <div>Extras</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Sensors.Authentication}}</div>
+                <div>{{mobile.Sensors.Extras}}</div>
+            </div>
+        </div>
+
+        <div class="colors">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Colors</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>Available</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Colors.Available}}</div>
+            </div>
+        </div>
+
+        <div class="price">
+            <div class="col-1-of-5">
+                <div class="col-1-of-2">
+                    <div class="heading"><strong>Price</strong></div>
+                </div>
+                <div class="col-1-of-2">
+                    <div>USD</div>
+                </div>
+            </div>
+            <div class="col-4-of-5">
+                <div>{{mobile.Price.USD}}</div>
+            </div>
+        </div>
+
+        <div class="buy">
+            <div class="col-1-of-5">
+                =>
+            </div>
+            <div class="col-4-of-5">
+                <a class="btn btn-dark" href= {% url 'addtocart' mobile.Brand mobile.Name %} >Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <script src={% static "specs/specs.js" %} charset="UTF-8"></script>
+{% endblock body %}

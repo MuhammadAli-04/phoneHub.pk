@@ -1,0 +1,23 @@
+{
+  "name": "phonehub.pk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile-main": "node-sass static/sass/main.scss static/css/style.css -w",
+    "compile-cart": "node-sass static/cart/style.scss static/cart/style.css -w",
+    "compile-compare": "node-sass static/compare/compare.scss static/compare/compare.css -w",
+    "compile-specs": "node-sass static/specs/specs.scss static/specs/specs.css -w",
+    "compile-addPhone": "node-sass static/addPhone/addPhone.scss static/addPhone/addPhone.css -w",
+    "compile-brandPhones": "node-sass static/brandPhone/brandPhone.scss static/brandPhone/brandPhone.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.3"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}

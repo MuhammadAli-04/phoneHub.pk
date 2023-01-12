@@ -1,0 +1,34 @@
+{% extends 'base.html' %} {% load static %} {% block body %} <link
+rel="stylesheet" href={% static 'cart/style.css' %}>
+<div class="col-3-of-5 total-items">
+  <div class="total">
+    <div class="col-1-of-2">
+      <button id = 'totalItem' type="button" class="btn btn-dark">Total Items : </button>
+    </div>
+    <div class="col-1-of-2">
+      <a  onclick="delAll()" type="button" class="btn btn-dark">
+        <i  class="fa-solid fa-trash"></i>
+        Delete All
+      </a>
+    </div>
+  </div>
+  <p id = 'userName' style="display: none;">{{userr.name}}</p>
+  <div class="item-list">
+   
+  </div>
+
+  <div class="order-summary">
+    <h2 class="summary">Order Summary</h2>
+    <p id = 'totalPrice'>Total: Rs. </p>
+    <button onclick = "checkOut()" type="button" class="btn btn-dark">CheckOut</button>
+  </div>
+
+</div>
+{% if msg %}
+    <script>
+        alert('{{msg}}')
+    </script>
+    {% endif %}
+
+<script src= {% static 'cart/script.js' %}></script>
+{% endblock body %}
