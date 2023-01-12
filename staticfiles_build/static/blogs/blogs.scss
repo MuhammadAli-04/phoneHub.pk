@@ -1,0 +1,88 @@
+/* columns */
+
+.col-1-of-2 {
+    width: calc(95% / 2);
+    margin: 1%;
+    float: left;
+}
+
+.col-3-of-4 {
+    width: calc((100% / 4)*3);
+    float: left;
+    padding: 0 5%;
+}
+
+.col-1-of-4 {
+    width: calc(100% / 4);
+    float: left;
+}
+
+.col-1-of-5 {
+    width: calc(100% / 5);
+    float: left;
+}
+
+.col-1-of-6 {
+    width: calc(100% / 6);
+    float: left;
+}
+
+.col-5-of-6 {
+    width: calc((100% / 6) * 5);
+    float: left;
+}
+
+.col-3-of-5 {
+    width: calc((100% / 5) * 3);
+    float: left;
+    padding: 0% 2%;
+}
+
+.col-4-of-5 {
+    width: calc((100% / 5) * 4);
+    float: left;
+}
+
+/* css */
+
+.about {
+    height: 24px;
+}
+
+.content {
+    padding: 0% 2%;
+}
+
+.comment {
+    padding-left: 5%;
+}
+
+
+// input[type=text] {
+//     border: none;
+//     border-bottom: 2px solid black;
+// }
+
+.topic {
+    background-color: #c1c1c1;
+}
+
+.main-section,
+.comments {
+    overflow: hidden;
+    background-color: #ebeff3;
+}
+
+.col-1-of-1{
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 2%;
+    background-color: #c1c1c1;
+    width: 100%;
+    height: auto;
+    float: none;
+}
+
+button{
+    border:0;
+}

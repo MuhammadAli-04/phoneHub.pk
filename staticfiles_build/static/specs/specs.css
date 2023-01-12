@@ -1,0 +1,87 @@
+.col-1-of-2 {
+  width: calc(100% / 2);
+  float: left; }
+
+.col-1-of-3 {
+  width: calc(100% / 3);
+  float: left; }
+
+.col-1-of-4 {
+  width: calc(100% / 4);
+  float: left; }
+
+.col-1-of-5 {
+  width: calc(100% / 5);
+  float: left; }
+
+.col-2-of-5 {
+  width: calc((100% / 5) * 2);
+  padding: 0% 1%;
+  overflow: hidden;
+  float: left; }
+
+.col-3-of-5 {
+  width: calc((100% / 5) * 3);
+  padding: 0% 1%;
+  float: left; }
+
+.col-4-of-5 {
+  width: calc((100% / 5) * 4);
+  float: left; }
+
+.specs {
+  overflow: hidden; }
+
+body {
+  color: black;
+  background-color: white; }
+
+.fa-solid {
+  margin: 5px; }
+  .fa-solid:hover {
+    transform: scale(1.2);
+    transition: all 0.2s; }
+
+.name {
+  font-size: 12px; }
+
+.phone-name {
+  background-color: #ebeff3;
+  padding: 1%; }
+
+.specs-box {
+  margin-top: 18%;
+  text-align: center; }
+
+.name,
+.search,
+.launch,
+.network,
+.build,
+.display,
+.platform,
+.battery,
+.sensors,
+.colors,
+.price,
+.cameras,
+.buy,
+.memory {
+  overflow: hidden;
+  padding: 1% 2%;
+  height: 100%; }
+  .name .col-4-of-5,
+  .search .col-4-of-5,
+  .launch .col-4-of-5,
+  .network .col-4-of-5,
+  .build .col-4-of-5,
+  .display .col-4-of-5,
+  .platform .col-4-of-5,
+  .battery .col-4-of-5,
+  .sensors .col-4-of-5,
+  .colors .col-4-of-5,
+  .price .col-4-of-5,
+  .cameras .col-4-of-5,
+  .buy .col-4-of-5,
+  .memory .col-4-of-5 {
+    padding-left: 7%; }

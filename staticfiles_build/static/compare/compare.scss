@@ -1,0 +1,173 @@
+//colors
+$color-primary: white;
+$color-secondary: black;
+$color-tertiary: #222222;
+$color-tertiary-light: #c1c1c1;
+$color-tertiary-lightest: #ebeff3;
+$color-white: white;
+$color-grey-dark-3: $color-tertiary;
+//columns
+.col-1-of-2 {
+    width: calc(100% / 2);
+    height: 100%;
+    float: left;
+}
+
+.col-1-of-3 {
+    width: calc(100% / 3);
+    height: 100%;
+    float: left;
+}
+
+.col-1-of-4 {
+    width: calc(100% / 4);
+    height: 100%;
+    float: left;
+}
+
+.col-1-of-5 {
+    width: calc(100% / 5);
+    height: 100%;
+    float: left;
+}
+
+.col-3-of-5 {
+    width: calc((100% / 5) * 3);
+    height: 100%;
+    float: left;
+}
+
+.col-4-of-5 {
+    width: calc((100% / 5) * 4);
+    height: 100%;
+    float: left;
+}
+
+//styling
+.all {
+    padding: 2% 5%;
+}
+
+.heading {
+    padding: 2%;
+}
+
+.specs-heading {
+    background-color: $color-tertiary-light;
+}
+
+.phone-img,
+.name,
+.search,
+.launch,
+.network,
+.build,
+.display,
+.platform,
+.battery,
+.sensors,
+.colors,
+.price,
+.camera,
+.buy,
+.memory {
+    overflow: hidden;
+    padding: 2%;
+    background-color: $color-tertiary-lightest;
+    border-bottom: $color-tertiary-light 3px solid;
+    height: 100%;
+}
+
+
+///////////////////////////////////////////
+
+
+/* Suggestions */
+::selection {
+  color: #fff;
+  background: #000;
+}
+
+.wrapper {
+  max-width: 450px;
+  margin: 0 2%;
+}
+
+.wrapper .search-input {
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input.active input {
+  border-radius: 5px 5px 0 0;
+}
+
+.search-input .autocom-box {
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+  z-index: 999;
+  position: absolute;
+}
+
+.search-input.active .autocom-box {
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+
+  /* Arham ki chwlain  */
+  position: absolute;
+  max-width: 450px;
+  width: 283px;
+  z-index: 999;
+  background: white;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+
+}
+
+.autocom-box li {
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.search-input.active .autocom-box li {
+  display: block;
+}
+
+.autocom-box li:hover {
+  background: #f2f2f2;
+}
+
+.search-input .icon {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+}

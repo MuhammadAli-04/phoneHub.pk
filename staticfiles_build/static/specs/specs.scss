@@ -1,0 +1,105 @@
+//colors
+$color-primary: white;
+$color-secondary: black;
+$color-tertiary: #222222;
+$color-tertiary-light: #c1c1c1;
+$color-tertiary-lightest: #ebeff3;
+$color-white: white;
+$color-grey-dark-3: $color-tertiary;
+//columns
+.col-1-of-2 {
+    width: calc(100% / 2);
+    float: left;
+}
+
+.col-1-of-3 {
+    width: calc(100% / 3);
+    float: left;
+}
+
+.col-1-of-4 {
+    width: calc(100% / 4);
+    float: left;
+}
+
+.col-1-of-5 {
+    width: calc(100% / 5);
+    float: left;
+}
+
+.col-2-of-5 {
+    width: calc((100% / 5) * 2);
+    padding: 0% 1%;
+    overflow: hidden;
+    float: left;
+}
+
+
+.col-3-of-5 {
+    width: calc((100% / 5) * 3);
+    padding: 0% 1%;
+    float: left;
+}
+
+.col-4-of-5 {
+    width: calc((100% / 5) * 4);
+    float: left;
+}
+
+//css
+
+.specs {
+    overflow: hidden;
+}
+
+body {
+    color: $color-secondary;
+    background-color: $color-primary;
+}
+
+
+.fa-solid {
+    margin: 5px;
+    &:hover {
+        transform: scale(1.2);
+        transition: all 0.2s;
+    }
+}
+
+
+.name {
+    font-size: 12px;
+}
+
+.phone-name {
+    background-color: $color-tertiary-lightest;
+    padding: 1%;
+}
+
+.specs-box {
+    margin-top: 18%;
+    text-align: center;
+}
+
+
+.name,
+.search,
+.launch,
+.network,
+.build,
+.display,
+.platform,
+.battery,
+.sensors,
+.colors,
+.price,
+.cameras,
+.buy,
+.memory {
+    overflow: hidden;
+    padding: 1% 2%;
+    height: 100%;
+    .col-4-of-5 {
+        padding-left: 7%;
+    }
+}
